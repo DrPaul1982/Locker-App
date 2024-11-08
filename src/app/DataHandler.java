@@ -7,9 +7,9 @@ public class DataHandler {
 
     private final Lock lock = new ReentrantLock();
 
-    public synchronized int modify(int num) {
-        lock.lock();
+    public int modify(int num) {
         try {
+            lock.lock();
             num = num * 3;
             return num;
         } finally {
